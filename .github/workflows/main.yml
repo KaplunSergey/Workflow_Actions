@@ -19,3 +19,14 @@ jobs:
     # Execute Unit tests
     - name: Unit Test
       run: ./gradlew testDebugUnitTest
+      
+    # Generate report
+    - name: Unit test report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Unit Tests
+        path: "**/test-results/testDebugUnitTest/*.xml"
+        reporter: java-junit
+        fail-on-error: true
+
