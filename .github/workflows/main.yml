@@ -2,7 +2,8 @@ name: Android CI
 
 on:
   pull_request:
-    branches: [ develop_copy ]
+    branches:
+      - 'test'
 
 jobs:
   Debug:
