@@ -33,7 +33,7 @@ jobs:
       uses: test-summary/action@v2
       with:
         paths: "**/test-results/testDebugUnitTest/*.xml"
-        if: always()
+      if: always()
         
     - name: Upload test summary
       uses: actions/upload-artifact@v3
