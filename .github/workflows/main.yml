@@ -28,10 +28,17 @@ jobs:
     - name: Unit Test
       run: ./gradlew testDebugUnitTest
 
-          # Generate report
+    # Generate report
     - name: Test Summary
       uses: test-summary/action@v2
       with:
         paths: "**/test-results/testDebugUnitTest/*.xml"
         if: always()
+        
+    - name: Upload test summary
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-summary
+        path: test-summary.md
+      if: always()
 
