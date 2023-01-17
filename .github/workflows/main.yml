@@ -33,5 +33,5 @@ jobs:
       uses: test-summary/action@v2
       with:
         paths: "**/test-results/testDebugUnitTest/*.xml"
-          if: always()
+        if: always()
 
