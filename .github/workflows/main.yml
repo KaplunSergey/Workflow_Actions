@@ -10,10 +10,11 @@ jobs:
     name: Run Unit Tests(GE)
     runs-on: ubuntu-latest
     
-    permissions:
-      id-token: write
-      contents: read
-      checks: write
+  permissions:
+    contents: read
+    issues: read
+    checks: write
+    pull-requests: write
 
     steps:
     - uses: actions/checkout@v3
