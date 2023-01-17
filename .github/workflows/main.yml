@@ -29,12 +29,8 @@ jobs:
       run: ./gradlew testDebugUnitTest
       
     # Generate report
-    - name: Unit test report
-      uses: dorny/test-reporter@v1
-      if: always()
+    - name: Test Summary
+      uses: test-summary/action@v2
       with:
-        name: Unit Tests
-        path: "**/test-results/testDebugUnitTest/*.xml"
-        reporter: java-junit
-        fail-on-error: true
-
+        paths: "**/test-results/testDebugUnitTest/*.xml"
+        if: always()
