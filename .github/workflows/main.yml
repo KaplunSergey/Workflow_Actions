@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
     - develop_copy
+    - 'release/uz_**'
+    - 'release/ge_**'
+    - 'test/**'
     
 jobs:
   Debug:
